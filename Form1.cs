@@ -20,7 +20,7 @@ namespace Dosyaİslemleri
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+          
         }
 
 
@@ -29,47 +29,39 @@ namespace Dosyaİslemleri
         private void btn_kaydet_Click(object sender, EventArgs e)
         {
 
-
-
+            string tel, tckimlik, ad, soyad, cinsiyet, eposta;
+            tel = txt_tel.Text;
+            tckimlik = txt_kimlik.Text;
+            ad = txt_ad.Text;
+            soyad = txt_soyad.Text;
+            eposta = txt_eposta.Text;
+            if (erkek.Checked == true)
+            {
+                cinsiyet = "Erkek";
+            }
+            else
+            {
+                cinsiyet = "Kadın";
+            }
             string directory = "C:\\Users\\l6_pc5\\Desktop\\Test";
             string file = "C:\\Users\\l6_pc5\\Desktop\\Test\\veritabani.txt";
             Directory.CreateDirectory(directory);
             StreamWriter sw = File.AppendText(file);
             //StreamWriter sw = new StreamWriter(stream);
-            sw.WriteLine("Efe Üjlerjj");
-            sw.Write("İkinci satır ");
-            sw.WriteLine("ve devamı.");
-            sw.WriteLine("Üçüncü satır.");
+            sw.WriteLine(ad+" "+soyad);
+            sw.WriteLine(tel);
+            sw.WriteLine(tckimlik);
+            sw.WriteLine(eposta);
+            sw.WriteLine(cinsiyet);
+
             sw.Close();
-
-
-
-            //FileStream stream = File.Create("C:\\Users\\l6_pc5\\Desktop\\Test\\veritabani.txt");
-            //StreamWriter sw = new StreamWriter(stream);
-            //sw.WriteLine("Tek satır metin.");
-            //sw.WriteLine(" Kokova Ni ivviyiu.");
-
-
         }
 
 
 
 
 
-        // string tel, tckimlik,ad,soyad,cinsiyet,eposta;
-        //tel = txt_tel.Text;
-        //tckimlik = txt_kimlik.Text;
-        //ad = txt_ad.Text;
-        //soyad = txt_soyad.Text;
-        //eposta = txt_eposta.Text;
-        //if (erkek.Checked==true)
-        //{
-        //    cinsiyet = "Erkek";
-        //}
-        //else
-        //{
-        //    cinsiyet = "Kadın";
-        //}
+
 
 
     }
